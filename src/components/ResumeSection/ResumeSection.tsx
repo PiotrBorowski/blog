@@ -1,33 +1,37 @@
 import { Slot, component$, useSignal, useVisibleTask$ } from "@builder.io/qwik";
 import styles from "./styles.module.css";
 
-export const ResumeSection = component$(({ sticky }: { sticky?: boolean }) => {
-  const animate = useSignal(false);
+export const ResumeSection = component$(
+  ({ sticky, id }: { sticky?: boolean; id?: string }) => {
+    const animate = useSignal(false);
 
-  useVisibleTask$(
-    () => {
-      animate.value = true;
-    },
-    { strategy: "intersection-observer" }
-  );
+    useVisibleTask$(
+      () => {
+        animate.value = true;
+      },
+      { strategy: "intersection-observer" }
+    );
 
-  return (
-    <div
-      class={[
-        "mt-20 flex items-end justify-center h-[100vh]",
-        styles.hidden,
-        animate.value ? styles.show : "",
-      ]}
-    >
+    return (
       <div
+        id={id}
         class={[
-          "px-14 py-10 w-full",
-          styles.glass,
-          sticky ? styles.sticky : "",
+          "mt-20 flex flex-col justify-end h-[100vh]",
+          styles.hidden,
+          animate.value ? styles.show : "",
         ]}
       >
-        <Slot />
+        <Slot name="content" />
+        <div
+          class={[
+            "px-14 py-10 w-full",
+            styles.glass,
+            sticky ? styles.sticky : "",
+          ]}
+        >
+          <Slot name="footer" />
+        </div>
       </div>
-    </div>
-  );
-});
+    );
+  }
+);

@@ -1,9 +1,9 @@
 .hidden {
     opacity: 0;
     filter: blur(5px);
-    transition: opacity 2s, blur 2s, transform 0.6s;
-    -webkit-transition: opacity 2s, blur 2s, transform 0.6s;
-    -moz-transition: opacity 2s, blur 2s, transform 0.6s;
+    transition: opacity 2s, blur 2s;
+    -webkit-transition: opacity 2s, blur 2s;
+    -moz-transition: opacity 2s, blur 2s;
   }
 
 .show {
