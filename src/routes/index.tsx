@@ -4,6 +4,7 @@ import { Link } from "@builder.io/qwik-city";
 import { JobItem } from "~/components/JobItem/JobItem";
 import { MenuItem } from "~/components/MenuItem/MenuItem";
 import { ResumeSection } from "~/components/ResumeSection/ResumeSection";
+import { MoArrowUp } from "@qwikest/icons/monoicons";
 
 export default component$(() => {
   const scrollTo = (section: string) =>
@@ -90,15 +91,17 @@ export default component$(() => {
           </JobItem>
         </ul>
         <div q:slot="footer" class="flex items-center justify-between">
-          <h3 class="font-bold text-4xl">Work experience</h3>
-          <a onClick$={scrollToTop}>Back to top</a>
+          <h3 class="font-bold text-4xl">Experience</h3>
+          <a onClick$={scrollToTop}>
+            <MoArrowUp class={"h-5 w-5"} />
+          </a>
         </div>
       </ResumeSection>
 
       <ResumeSection id="education" sticky>
         <ul q:slot="content" class="h-96 mb-56 px-10">
           <JobItem
-            name={"Wrocław Uniwersity of Science and Technology"}
+            name={"Wrocław University of Science and Technology"}
             position="Master of Science"
             startDate="2020"
             endDate="2021"
@@ -106,7 +109,7 @@ export default component$(() => {
             <p></p>
           </JobItem>
           <JobItem
-            name={"Wrocław Uniwersity of Science and Technology"}
+            name={"Wrocław University of Science and Technology"}
             position="Bachelor of Science"
             startDate="2016"
             endDate="2020"
@@ -117,21 +120,27 @@ export default component$(() => {
 
         <div q:slot="footer" class="flex items-center justify-between">
           <h3 class="font-bold text-4xl">Education</h3>
-          <a onClick$={scrollToTop}>Back to top</a>
+          <a onClick$={scrollToTop}>
+            <MoArrowUp class={"h-5 w-5"} />
+          </a>
         </div>
       </ResumeSection>
 
       <ResumeSection id="contact" sticky>
         <div q:slot="footer" class="flex items-center justify-between">
           <h3 class="font-bold text-4xl">Contact</h3>
-          <a onClick$={scrollToTop}>Back to top</a>
+          <a onClick$={scrollToTop}>
+            <MoArrowUp class={"h-5 w-5"} />
+          </a>
         </div>
       </ResumeSection>
 
       <ResumeSection sticky>
         <div q:slot="footer" class="flex items-center justify-between">
           <h3 class="font-bold text-4xl">Footer</h3>
-          <a onClick$={scrollToTop}>Back to top</a>
+          <a onClick$={scrollToTop}>
+            <MoArrowUp class={"h-5 w-5"} />
+          </a>
         </div>
       </ResumeSection>
     </>
