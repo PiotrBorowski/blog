@@ -10,3 +10,31 @@
     cursor: pointer;
     color: var(--yellow);
 }
+
+.hiddenChild {
+    transition: width 0.5s ease-in-out, background-color 0.7s ease-in-out;
+    width: 0px;
+    height: 3px;
+    border-radius: 9999px;
+    background-color: 'white'
+}
+
+@media only screen and (min-width: 600px) {
+    .highlight .hiddenChild {
+        visibility: hidden;
+    }
+} 
+
+.highlight:hover .hiddenChild {
+    visibility: visible;
+    width: 100%;
+    background-color: var(--yellow)
+}
+
+@media only screen and (max-width: 600px) {
+    .hiddenChild {
+        visibility: visible;
+        width: 100%;
+        background-color: var(--yellow)
+    }
+}

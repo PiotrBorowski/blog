@@ -7,8 +7,9 @@ export const MenuItem = component$<{
   label: string;
 }>(({ onClick$, label }) => {
   return (
-    <a class={["w-20", styles.highlight]} onClick$={onClick$}>
+    <a class={[styles.highlight]} onClick$={onClick$}>
       {label}
+      <div class={[styles.hiddenChild]}></div>
     </a>
   );
 });

@@ -16,10 +16,22 @@ export default component$(() => {
       });
     });
 
+  const scrollToTop = $(() => {
+    document.getElementById("main")?.scrollIntoView({
+      behavior: "smooth",
+      block: "center",
+      inline: "center",
+    });
+  });
+
   return (
     <>
       <ResumeSection sticky>
-        <div q:slot="content" class="h-64 mb-20 md:h-96 md:mb-56 px-10">
+        <div
+          q:slot="content"
+          id="main"
+          class="h-64 mb-20 md:h-96 md:mb-56 px-10"
+        >
           <h1 class="font-bold text-6xl text-left md:ml-20">
             Hello<span class="text-yellow-200">.</span>
           </h1>
@@ -27,7 +39,7 @@ export default component$(() => {
 
         <div
           q:slot="footer"
-          class="flex flex-row justify-between items-center flex-wrap"
+          class="flex flex-row justify-between items-center flex-wrap gap-3"
         >
           <div>
             <h3 class="font-bold text-4xl">
@@ -36,12 +48,14 @@ export default component$(() => {
             <h4 class="text-md  ">software developer</h4>
           </div>
 
-          <MenuItem label="Experience" onClick$={scrollTo("experience")} />
-          <MenuItem label="Education" onClick$={scrollTo("education")} />
-          <MenuItem label="Contact" onClick$={scrollTo("contact")} />
+          <ul class="flex flex-row gap-4 justify-around flex-1 mr-3 max-w-3xl">
+            <MenuItem label="Experience" onClick$={scrollTo("experience")} />
+            <MenuItem label="Education" onClick$={scrollTo("education")} />
+            <MenuItem label="Contact" onClick$={scrollTo("contact")} />
+          </ul>
 
           <Link
-            class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded h-10"
+            class="hover:text-yellow-300 border-yellow-200 border-2 text-white font-bold py-1 px-4 rounded"
             href="/blog"
           >
             Blog
@@ -75,9 +89,10 @@ export default component$(() => {
             <p></p>
           </JobItem>
         </ul>
-        <h3 q:slot="footer" class="font-bold text-4xl">
-          Work experience
-        </h3>
+        <div q:slot="footer" class="flex items-center justify-between">
+          <h3 class="font-bold text-4xl">Work experience</h3>
+          <a onClick$={scrollToTop}>Back to top</a>
+        </div>
       </ResumeSection>
 
       <ResumeSection id="education" sticky>
@@ -99,21 +114,25 @@ export default component$(() => {
             <p></p>
           </JobItem>
         </ul>
-        <h3 q:slot="footer" class="font-bold text-4xl">
-          Education
-        </h3>
+
+        <div q:slot="footer" class="flex items-center justify-between">
+          <h3 class="font-bold text-4xl">Education</h3>
+          <a onClick$={scrollToTop}>Back to top</a>
+        </div>
       </ResumeSection>
 
       <ResumeSection id="contact" sticky>
-        <h3 q:slot="footer" class="font-bold text-4xl">
-          Contact
-        </h3>
+        <div q:slot="footer" class="flex items-center justify-between">
+          <h3 class="font-bold text-4xl">Contact</h3>
+          <a onClick$={scrollToTop}>Back to top</a>
+        </div>
       </ResumeSection>
 
       <ResumeSection sticky>
-        <h3 q:slot="footer" class="font-bold text-4xl">
-          Footer
-        </h3>
+        <div q:slot="footer" class="flex items-center justify-between">
+          <h3 class="font-bold text-4xl">Footer</h3>
+          <a onClick$={scrollToTop}>Back to top</a>
+        </div>
       </ResumeSection>
     </>
   );
