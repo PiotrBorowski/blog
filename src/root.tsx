@@ -21,10 +21,6 @@ export default component$(() => {
       <head>
         <meta charSet="utf-8" />
         <link rel="manifest" href="/manifest.json" />
-        <link
-          rel="stylesheet"
-          href="https://fonts.googleapis.com/css2?family=Lato"
-        />
         <RouterHead />
       </head>
       <body lang="en">
