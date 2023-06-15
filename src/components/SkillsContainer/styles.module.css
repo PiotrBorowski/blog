@@ -1,0 +1,16 @@
+
+
+.glass {
+    transition: all 0.3s ease-out;
+    /* From https://css.glass */
+    background: rgba(51, 65, 82, 0.8);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(9px);
+    -webkit-backdrop-filter: blur(9px);
+    border: 1px solid white;
+}
+
+.glass:hover {
+    border: 1px solid var(--yellow);
+}

@@ -41,6 +41,12 @@
  * the styles in here will be applied to the Document, without any sort of CSS scoping.
  *
  */
+ :root {
+  --yellow: rgb(254 240 138);
+  --primary: rgba(51, 65, 82)
+}
+
+
 html {
   -webkit-text-size-adjust: 100%;
   -moz-tab-size: 4;
@@ -71,4 +77,18 @@ a {
 a:hover {
   cursor: pointer;
   color: var(--yellow);
+}
+
+*::-webkit-scrollbar {
+  width: 15px;
+}
+
+*::-webkit-scrollbar-track {
+  background: var(--primary);
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: var(--primary);
+  border-radius: 14px;
+  border: 2px solid var(--yellow);
 }

@@ -5,6 +5,7 @@ import { JobItem } from "~/components/JobItem/JobItem";
 import { MenuItem } from "~/components/MenuItem/MenuItem";
 import { ResumeSection } from "~/components/ResumeSection/ResumeSection";
 import { MoArrowUp } from "@qwikest/icons/monoicons";
+import { SkillsContainer } from "~/components/SkillsContainer/SkillsContainer";
 
 export default component$(() => {
   const scrollTo = (section: string) =>
@@ -46,10 +47,11 @@ export default component$(() => {
             <h3 class="font-bold text-4xl">
               Piotr Borowski<span class="text-yellow-200">.</span>
             </h3>
-            <h4 class="text-md  ">software developer</h4>
+            <h4 class="text-md">software developer</h4>
           </div>
 
           <ul class="flex flex-row gap-4 justify-around flex-1 mr-3 max-w-3xl">
+            <MenuItem label="Skills" onClick$={scrollTo("skills")} />
             <MenuItem label="Experience" onClick$={scrollTo("experience")} />
             <MenuItem label="Education" onClick$={scrollTo("education")} />
             <MenuItem label="Contact" onClick$={scrollTo("contact")} />
@@ -61,6 +63,25 @@ export default component$(() => {
           >
             Blog
           </Link>
+        </div>
+      </ResumeSection>
+
+      <ResumeSection id="skills" sticky>
+        <div
+          q:slot="content"
+          class="flex justify-center flex-1 h-64 mb-20 md:h-56 md:mb-96 "
+        >
+          <div class="flex flex-row overflow-y-hidden overflow-x-auto gap-20 max-h-96 pb-10 pl-[10%] md:pl-0">
+            <SkillsContainer />
+            <SkillsContainer />
+            {/* <SkillsContainer /> */}
+          </div>
+        </div>
+        <div q:slot="footer" class="flex items-center justify-between">
+          <h3 class="font-bold text-4xl">Skills</h3>
+          <a onClick$={scrollToTop}>
+            <MoArrowUp class={"h-5 w-5"} />
+          </a>
         </div>
       </ResumeSection>
 
@@ -129,15 +150,6 @@ export default component$(() => {
       <ResumeSection id="contact" sticky>
         <div q:slot="footer" class="flex items-center justify-between">
           <h3 class="font-bold text-4xl">Contact</h3>
-          <a onClick$={scrollToTop}>
-            <MoArrowUp class={"h-5 w-5"} />
-          </a>
-        </div>
-      </ResumeSection>
-
-      <ResumeSection sticky>
-        <div q:slot="footer" class="flex items-center justify-between">
-          <h3 class="font-bold text-4xl">Footer</h3>
           <a onClick$={scrollToTop}>
             <MoArrowUp class={"h-5 w-5"} />
           </a>
