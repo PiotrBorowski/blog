@@ -4,7 +4,7 @@ import { Link } from "@builder.io/qwik-city";
 import { JobItem } from "~/components/JobItem/JobItem";
 import { MenuItem } from "~/components/MenuItem/MenuItem";
 import { ResumeSection } from "~/components/ResumeSection/ResumeSection";
-import { MoArrowUp } from "@qwikest/icons/monoicons";
+import { MoArrowUp, MoDocument, MoDownload } from "@qwikest/icons/monoicons";
 import { SkillsContainer } from "~/components/SkillsContainer/SkillsContainer";
 
 export default component$(() => {
@@ -32,11 +32,19 @@ export default component$(() => {
         <div
           q:slot="content"
           id="main"
-          class="h-64 mb-20 md:h-96 md:mb-56 px-10"
+          class="h-full px-10 flex flex-1 flex-wrap items-center gap-10 content-center"
         >
           <h1 class="font-bold text-6xl text-left md:ml-20 font-serif">
             Hello<span class="text-yellow-200">.</span>
           </h1>
+          <Link
+            download={"PiotrBorowskiCV"}
+            class="text-yellow-200 border-yellow-200 bg-slate-500 hover:text-yellow-300 hover:bg-slate-600 hover:border-yellow-300 transition-colors duration-500 border-2 text-xl font-bold py-3 px-6 h-min rounded flex items-center"
+            href="/Piotr_Borowski_CV.pdf"
+          >
+            Resume PDF
+            <MoDocument class="ml-2" />
+          </Link>
         </div>
 
         <div
@@ -67,10 +75,7 @@ export default component$(() => {
       </ResumeSection>
 
       <ResumeSection id="skills" sticky>
-        <div
-          q:slot="content"
-          class="flex justify-center flex-1 h-64 mb-20 md:h-56 md:mb-96 "
-        >
+        <div q:slot="content" class="flex justify-center flex-1 h-full ">
           <div class="flex flex-row overflow-y-hidden overflow-x-auto gap-20 max-h-96 pb-10 pl-[10%] md:pl-0">
             <SkillsContainer />
             <SkillsContainer />
@@ -86,7 +91,7 @@ export default component$(() => {
       </ResumeSection>
 
       <ResumeSection id="experience" sticky>
-        <ul q:slot="content" class="h-96 mb-56 px-10">
+        <ul q:slot="content" class="h-full px-10">
           <JobItem
             name={"Monterail"}
             position="React Native Developer"
@@ -120,7 +125,7 @@ export default component$(() => {
       </ResumeSection>
 
       <ResumeSection id="education" sticky>
-        <ul q:slot="content" class="h-96 mb-56 px-10">
+        <ul q:slot="content" class="h-full px-10">
           <JobItem
             name={"Wrocław University of Science and Technology"}
             position="Master of Science"
