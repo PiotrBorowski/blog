@@ -34,7 +34,7 @@ export default component$(() => {
           id="main"
           class="h-64 mb-20 md:h-96 md:mb-56 px-10"
         >
-          <h1 class="font-bold text-6xl text-left md:ml-20">
+          <h1 class="font-bold text-6xl text-left md:ml-20 font-serif">
             Hello<span class="text-yellow-200">.</span>
           </h1>
         </div>
@@ -44,7 +44,7 @@ export default component$(() => {
           class="flex flex-row justify-between items-center flex-wrap gap-3"
         >
           <div>
-            <h3 class="font-bold text-4xl">
+            <h3 class="font-bold font-serif text-4xl">
               Piotr Borowski<span class="text-yellow-200">.</span>
             </h3>
             <h4 class="text-md">software developer</h4>

@@ -2,6 +2,9 @@
 module.exports = {
   content: ['./src/**/*.{js,ts,jsx,tsx,mdx}'],
   theme: {
+    fontFamily: {
+        'serif': ['DM Serif']
+    },
     extend: {
       animation: {
         'fade-in': 'fadeIn 2s ease-in-out'

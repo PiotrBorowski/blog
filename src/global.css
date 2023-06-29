@@ -26,6 +26,11 @@
   src: url('/fonts/Lato-Regular.ttf');
 }
 
+@font-face {
+  font-family: "DM Serif";
+  src: url('/fonts/DMSerifText-Regular.ttf');
+}
+
 /**
  * WHAT IS THIS FILE?
  *
@@ -54,7 +59,7 @@ html {
   tab-size: 4;
   font-family: Lato, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
     'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
-    'Segoe UI Symbol', 'Noto Color Emoji', "Lato Thin", "Lato Light", "Lato Bold";
+    'Segoe UI Symbol', 'Noto Color Emoji', "Lato Thin", "Lato Light", "Lato Bold", "DM Serif";
   
   @apply text-white
 }
